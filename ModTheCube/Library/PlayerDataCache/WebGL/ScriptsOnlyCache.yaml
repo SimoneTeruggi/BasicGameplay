@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Cube
     Unity.Play.Publisher.Editor.dll:
     - Unity.Play.Publisher.Editor.AnalyticsHelper
+    - Unity.Play.Publisher.Editor.PublisherWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -13,7 +14,7 @@ ScriptsOnlyBuild:
   serializedClasses: {}
   methodsToPreserve: []
   sceneClasses:
-    Assets/ModTheCube/Scene.unity:
+    Assets/ModTheCube/ModTheCube.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -43,7 +44,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 27098}
+      Script: {instanceID: 2388}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -147,6 +148,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 3ab104abc18cbf361991fe1f66fa2936
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cube
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -825,13 +832,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 3ab104abc18cbf361991fe1f66fa2936
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Cube
   platform: 20
   scenePathNames:
-  - Assets/ModTheCube/Scene.unity
-  playerPath: D:/_POLIMI/UnityProjects/BUILD_TEMP
+  - Assets/ModTheCube/ModTheCube.unity
+  playerPath: D:/_POLIMI/UnityProjects/BasicGameplay/ModTheCube/WebGL Builds
