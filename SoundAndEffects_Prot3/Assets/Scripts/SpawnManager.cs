@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject obstaclePrefab; //reference to obstacle to spawn
+    public GameObject[] obstaclePrefabs; //reference to obstacle to spawn
     private PlayerController playerControllerScript;
     private Vector3 spawnPos = new Vector3(20, 0, 0);
     private float startDelay = 2.0f; //time after which to start spawning obstacles
@@ -28,7 +28,8 @@ public class SpawnManager : MonoBehaviour
         //spawn obstacles only if not in game over
         if (playerControllerScript.gameOver == false)
         {
-            Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+            int prefabSpawnIndex = Random.Range(0, obstaclePrefabs.Length);
+            Instantiate(obstaclePrefabs[prefabSpawnIndex], spawnPos, obstaclePrefabs[prefabSpawnIndex].transform.rotation);
         }
         
     }

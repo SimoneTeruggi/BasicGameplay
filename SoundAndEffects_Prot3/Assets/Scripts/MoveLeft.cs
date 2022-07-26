@@ -19,7 +19,15 @@ public class MoveLeft : MonoBehaviour
         //if we are not in game over move objects to the left by speed
         if (playerControllerScript.gameOver == false)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            if (playerControllerScript.doubleSpeed)
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * (speed * 2));
+            }
+            else
+            {
+                transform.Translate(Vector3.left * Time.deltaTime * speed);
+            }
+            
         }
 
         //if objects goes out of left boundary destroy it if it is an obstacle
