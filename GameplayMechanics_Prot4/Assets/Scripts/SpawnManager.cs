@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public GameObject powerUp;
+    public GameObject[] enemyPrefabs;
+    public GameObject[] powerUps;
     private float spawnRange = 9;
 
     PlayerController playerControllerScript;
@@ -16,9 +16,10 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int randomPowerUp = Random.Range(0, powerUps.Length);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         SpawnEnemyWave(waveNumber);
-        Instantiate(powerUp, GenerateSpawnPosition(), powerUp.transform.rotation);
+        Instantiate(powerUps[randomPowerUp], GenerateSpawnPosition(), powerUps[randomPowerUp].transform.rotation);
     }
 
     // Update is called once per frame
@@ -29,7 +30,8 @@ public class SpawnManager : MonoBehaviour
         {
             waveNumber++;
             SpawnEnemyWave(waveNumber);
-            Instantiate(powerUp, GenerateSpawnPosition(), powerUp.transform.rotation);
+            int randomPowerUp = Random.Range(0, powerUps.Length);
+            Instantiate(powerUps[randomPowerUp], GenerateSpawnPosition(), powerUps[randomPowerUp].transform.rotation);
         }
     }
 
@@ -47,7 +49,9 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < enemyToSpawn; i++)
         {
-            Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+            int randomIndex = Random.Range(0, enemyPrefabs.Length);
+
+            Instantiate(enemyPrefabs[randomIndex], GenerateSpawnPosition(), enemyPrefabs[randomIndex].transform.rotation);
         }
     }
 }
