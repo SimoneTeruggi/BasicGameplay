@@ -14,14 +14,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnTargets());
+
         score = 0;
-        scoreText.text = "Score: " + score;
+        UpdateScore(0);
+         
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
     }
 
     IEnumerator SpawnTargets()
